@@ -1,0 +1,35 @@
+<p>proyectos works!</p>
+<div class="container">
+    <div class="col">        
+        <h1 style="text-align: center; font-weight: bold;">{{title}}</h1>
+    </div>
+    <br/><br/>
+     <form class="form-group row">
+        <div class="form-group col-md-3">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="nombre" class="form-control" [(ngModel)]="empleadoNombre"/>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="nombre">Apellido:</label>
+            <input type="text" name="apellido" id="apellido" placeholder="apellido" class="form-control" [(ngModel)]="empleadoApellido"/>
+        </div>  
+        <div class="form-group col-md-3">
+            <label for="nombre">Cargo:</label>
+            <input type="text" name="cargo" id="cargo" placeholder="cargo" class="form-control" [(ngModel)]="empleadoCargo"/>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="nombre">Salario:</label>
+            <input type="number" name="salario" id="salario" placeholder="salario" class="form-control" [(ngModel)]="empleadoSalario"/>
+        </div>
+        <br>
+        <br><br><br><br><br>
+        <div class="form-group col-md-3">
+            
+           <button type="submit" class="btn btn-primary" (click)="registrarEmpleadoProyecto()">Registrar</button>
+        </div>      
+
+     </form>
+</div><br>
+<div style="text-align: center;">
+    <button type="button" class="btn btn-primary" (click)="backHome()">Home</button>
+</div>

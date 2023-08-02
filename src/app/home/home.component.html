@@ -1,0 +1,86 @@
+<!--<div class="container">
+    <div class="col">        
+        <h1 style="text-align: center; font-weight: bold;">{{title}}</h1>
+    </div>
+    <br/><br/>
+     <form class="form-group row">
+        <div class="form-group col-md-3">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="nombre" class="form-control" [(ngModel)]="empleadoNombre"/>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="nombre">Apellido:</label>
+            <input type="text" name="apellido" id="apellido" placeholder="apellido" class="form-control" [(ngModel)]="empleadoApellido"/>
+        </div>  
+        <div class="form-group col-md-3">
+            <label for="nombre">Cargo:</label>
+            <input type="text" name="cargo" id="cargo" placeholder="cargo" class="form-control" [(ngModel)]="empleadoCargo"/>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="nombre">Salario:</label>
+            <input type="number" name="salario" id="salario" placeholder="salario" class="form-control" [(ngModel)]="empleadoSalario"/>
+        </div>
+        <br> <br> <br> <br>
+        <div class="form-group col-md-3">            
+           <button type="submit" class="btn btn-primary" (click)="registrarEmpleado()">Registrar</button>
+        </div>      
+
+     </form>
+</div><br> -->
+
+<!-- <app-empleado-hijo-c *ngFor="let empleado of empleados; let i=index;" [empleadoLista]="empleado" [indice]="i"></app-empleado-hijo-c> -->
+<div class="container" style="margin-top: 100px;">
+<div class="card">
+     <div class="card-header">
+        <!-- <a class="btn btn-success" routerLink="/agregarEmpleado/"> Agregar Empleado </a> -->
+        <button type="button" class="btn btn-success" routerLink="/agregarEmpleado/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+              </svg>
+            Agregar Empleado
+          </button>        
+     </div>
+     <div class="card-body" >
+         <h4 class="card-title">Empleados Registrados</h4>
+         <div class="table-responsive">
+             <table class="table table-primary">
+                 <thead>
+                     <tr>
+                        <th scope="col">ID</th>   
+                         <th scope="col">Nombre</th>
+                         <th scope="col">Apellido</th>
+                         <th scope="col">Cargo</th>
+                         <th scope="col">Salario</th>
+                         <th scope="col">Acciones</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr class="" *ngFor="let empleado of empleados; let indice=index;" >
+                        
+                         <td scope="row" >{{indice+1}}</td>
+                          <td>{{empleado.nombre}}</td>
+                         <td>{{empleado.apellido}}</td>
+                         <td>{{empleado.cargo}}</td>
+                         <td>{{empleado.salario}}</td>
+                        <td>
+                        
+                            <a [routerLink]="['/actualizaEmpleado',indice]" [queryParams]="{accion:'1'}">
+                                <button class="btn btn-success btn-sm"
+                                    style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .3rem; --bs-btn-font-size: .75rem; margin-right: .2rem;">Actualizar</button>
+                            </a>
+                            <a [routerLink]="['/actualizaEmpleado',indice]" [queryParams]="{accion:'2'}">
+                                <button class="btn btn-danger btn-sm"
+                                    style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .3rem; --bs-btn-font-size: .75rem;">Eliminar</button>
+                            </a>
+                        </td>
+                        </tr>
+                 </tbody>
+             </table>
+         </div>
+     </div>    
+ </div>
+</div>
+<br><br><br>
+
+

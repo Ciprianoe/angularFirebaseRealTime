@@ -1,0 +1,26 @@
+<ul class="nav bg-light" >
+    <!-- <a class="navbar-brand" href=""><img src='../systemaIcon.ico'></a>   -->  
+    <li class="nav-item">
+        <a class="nav-link" routerLink="" aria-current="page">Home</a>
+    </li>
+   <!--  <li class="nav-item">
+        <a class="nav-link" routerLink="/proyectos">Proyectos</a>
+    </li>     -->
+    <!-- <li class="nav-item">
+        <a class="nav-link" href="/actualizaEmpleado">Actualiza Empleado</a>
+    </li> -->
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/quienes">Quiénes Somos</a>
+    </li>   
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/contacto">Contacto</a>
+    </li>
+    <li class="nav-item" style="margin-left: 800px;" *ngIf="!logIn()">
+        <a class="nav-link" routerLink="/login" >Login</a>
+    </li>
+    <li class="nav-item" style="margin-left: 800px;" *ngIf="logIn()">
+        <a class="nav-link" routerLink="/login" (click)="logOut()">Logout</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
+
